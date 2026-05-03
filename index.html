@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BioVital - Consultoría Médica</title>
+    <meta name="description" content="BioVital - Tu salud es nuestra prioridad. Consultoría médica con especialidades en cardiología, neumonología, psicología y pediatría.">
+    <meta name="keywords" content="consultoría médica, salud, cardiología, neumonología, psicología, pediatría, BioVital">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header" id="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="imagenes/logitox-removebg-preview.png" alt="BioVital Logo" class="logo-img">
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li class="nav-item">
+                        <a href="#especializaciones" class="nav-link">Especializaciones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#ubicacion" class="nav-link">Ubicación</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#nosotros" class="nav-link">Sobre nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contacto" class="nav-link">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="registro.html" class="nav-link btn-nav">Registrarse</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="login.html" class="nav-link btn-nav">Iniciar Sesión</a>
+                    </li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Image Carousel Navigation -->
+    <section class="image-carousel" id="carousel">
+        <div class="carousel-container">
+            <div class="carousel-wrapper">
+                <div class="carousel-track">
+                    <div class="carousel-slide">
+                        <img src="https://via.placeholder.com/300x200/3b82f6/ffffff?text=Instalaciones+Modernas" alt="Instalaciones Modernas" class="carousel-img">
+                        <div class="carousel-caption">
+                            <h3>Instalaciones Modernas</h3>
+                            <p>Tecnología de última generación</p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://via.placeholder.com/300x200/1e40af/ffffff?text=Equipo+Médico" alt="Equipo Médico" class="carousel-img">
+                        <div class="carousel-caption">
+                            <h3>Equipo Médico</h3>
+                            <p>Profesionales altamente calificados</p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://via.placeholder.com/300x200/60a5fa/ffffff?text=Tecnología+Avanzada" alt="Tecnología Avanzada" class="carousel-img">
+                        <div class="carousel-caption">
+                            <h3>Tecnología Avanzada</h3>
+                            <p>Equipamiento médico de punta</p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://via.placeholder.com/300x200/2563eb/ffffff?text=Atención+Personalizada" alt="Atención Personalizada" class="carousel-img">
+                        <div class="carousel-caption">
+                            <h3>Atención Personalizada</h3>
+                            <p>Cuidado individual para cada paciente</p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://via.placeholder.com/300x200/1d4ed8/ffffff?text=Salud+Integral" alt="Salud Integral" class="carousel-img">
+                        <div class="carousel-caption">
+                            <h3>Salud Integral</h3>
+                            <p>Enfoque holístico de la salud</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-btn carousel-btn-prev" id="prevBtn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-btn carousel-btn-next" id="nextBtn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            <div class="carousel-indicators">
+                <button class="indicator active" data-slide="0"></button>
+                <button class="indicator" data-slide="1"></button>
+                <button class="indicator" data-slide="2"></button>
+                <button class="indicator" data-slide="3"></button>
+                <button class="indicator" data-slide="4"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-background">
+            <img src="https://via.placeholder.com/1920x800/3b82f6/ffffff?text=Médicos+Profesionales" alt="Profesionales de la salud" class="hero-img">
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">TU SALUD ES NUESTRA PRIORIDAD</h1>
+                <p class="hero-subtitle">Mira nuestros servicios</p>
+            </div>
+            <div class="specialties-grid">
+                <div class="specialty-card" data-specialty="general">
+                    <div class="specialty-icon">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <span class="specialty-name">GENERAL</span>
+                </div>
+                <div class="specialty-card" data-specialty="cardiologia">
+                    <div class="specialty-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <span class="specialty-name">CARDIOLOGÍA</span>
+                </div>
+                <div class="specialty-card" data-specialty="neumonologia">
+                    <div class="specialty-icon">
+                        <i class="fas fa-lungs"></i>
+                    </div>
+                    <span class="specialty-name">NEUMONOLOGÍA</span>
+                </div>
+                <div class="specialty-card" data-specialty="psicologia">
+                    <div class="specialty-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <span class="specialty-name">PSICOLOGÍA</span>
+                </div>
+                <div class="specialty-card" data-specialty="pediatria">
+                    <div class="specialty-icon">
+                        <i class="fas fa-baby"></i>
+                    </div>
+                    <span class="specialty-name">PEDIATRÍA</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about" id="nosotros">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="https://via.placeholder.com/500x600/3b82f6/ffffff?text=Profesional+de+Salud" alt="Profesional de la salud" class="about-img">
+            </div>
+            <div class="about-content">
+                <h2 class="about-title">Sobre nosotros</h2>
+                <p class="about-text">
+                    En BioVital, nos comprometemos a ofrecer servicios médicos de la más alta calidad con un equipo de profesionales altamente calificados y experimentados. Nuestra misión es brindar atención médica integral y personalizada para garantizar el bienestar de nuestros pacientes.
+                </p>
+                <p class="about-text">
+                    Contamos con tecnología de última generación y instalaciones modernas para asegurar diagnósticos precisos y tratamientos efectivos en todas nuestras especialidades.
+                </p>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">15+</span>
+                        <span class="stat-label">Años de experiencia</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Médicos especializados</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">10k+</span>
+                        <span class="stat-label">Pacientes atendidos</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- Locations Section -->
+    <section class="locations" id="ubicacion">
+        <div class="locations-container">
+            <h2 class="locations-title">Nuestras Sucursales</h2>
+            <div class="locations-grid">
+                <div class="location-card">
+                    <div class="location-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3 class="location-name">CARACAS (Principal)</h3>
+                    <p class="location-address">Av. Principal con Calle Secundaria, Edificio Médico, Piso 3</p>
+                    <p class="location-phone"><i class="fas fa-phone"></i> +58 212-1234567</p>
+                    <p class="location-email"><i class="fas fa-envelope"></i> caracas@biovital.com</p>
+                    <button class="location-btn" onclick="showMap('caracas')">Ver en mapa</button>
+                </div>
+                <div class="location-card">
+                    <div class="location-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3 class="location-name">CARACAS (Este)</h3>
+                    <p class="location-address">Av. Este con Calle Norte, Centro Médico Este, Piso 2</p>
+                    <p class="location-phone"><i class="fas fa-phone"></i> +58 212-7654321</p>
+                    <p class="location-email"><i class="fas fa-envelope"></i> este@biovital.com</p>
+                    <button class="location-btn" onclick="showMap('caracas-este')">Ver en mapa</button>
+                </div>
+                <div class="location-card">
+                    <div class="location-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3 class="location-name">MARACAIBO (Zulia)</h3>
+                    <p class="location-address">Av. del Lago con Calle 15, Hospital Zulia, Piso 1</p>
+                    <p class="location-phone"><i class="fas fa-phone"></i> +58 261-9876543</p>
+                    <p class="location-email"><i class="fas fa-envelope"></i> maracaibo@biovital.com</p>
+                    <button class="location-btn" onclick="showMap('maracaibo')">Ver en mapa</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="imagenes/logitox-removebg-preview.png" alt="BioVital Logo" class="footer-logo-img">
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Especialidades</h4>
+                        <ul>
+                            <li><a href="#especializaciones">Medicina General</a></li>
+                            <li><a href="#especializaciones">Cardiología</a></li>
+                            <li><a href="#especializaciones">Neumonología</a></li>
+                            <li><a href="#especializaciones">Psicología</a></li>
+                            <li><a href="#especializaciones">Pediatría</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Consultorios</h4>
+                        <ul>
+                            <li><a href="#ubicacion">Caracas (Principal)</a></li>
+                            <li><a href="#ubicacion">Caracas (Este)</a></li>
+                            <li><a href="#ubicacion">Maracaibo (Zulia)</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Contacto</h4>
+                        <ul>
+                            <li><i class="fas fa-phone"></i> <a href="tel:+582121234567">+58 212-1234567</a></li>
+                            <li><i class="fas fa-envelope"></i> <a href="mailto:info@biovital.com">info@biovital.com</a></li>
+                            <li><i class="fas fa-clock"></i> Lunes - Viernes: 8:00 AM - 6:00 PM</li>
+                            <li><i class="fas fa-calendar"></i> Sábados: 9:00 AM - 1:00 PM</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-social">
+                    <h4>Síguenos</h4>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 BioVital. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Appointment Modal -->
+    <div class="modal" id="appointmentModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h3 class="modal-title">Agendar Cita</h3>
+            <form class="appointment-form" id="appointmentForm">
+                <div class="form-group">
+                    <label for="modalName">Nombre completo:</label>
+                    <input type="text" id="modalName" name="modalName" required>
+                </div>
+                <div class="form-group">
+                    <label for="modalEmail">Email:</label>
+                    <input type="email" id="modalEmail" name="modalEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="modalPhone">Teléfono:</label>
+                    <input type="tel" id="modalPhone" name="modalPhone" required>
+                </div>
+                <div class="form-group">
+                    <label for="modalSpecialty">Especialidad:</label>
+                    <select id="modalSpecialty" name="modalSpecialty" required>
+                        <option value="">Selecciona una especialidad</option>
+                        <option value="general">Medicina General</option>
+                        <option value="cardiologia">Cardiología</option>
+                        <option value="neumonologia">Neumonología</option>
+                        <option value="psicologia">Psicología</option>
+                        <option value="pediatria">Pediatría</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

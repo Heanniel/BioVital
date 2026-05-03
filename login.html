@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - BioVital</title>
+    <meta name="description" content="Inicia sesión en BioVital para acceder a tus servicios médicos">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header" id="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="https://via.placeholder.com/150x50/1e40af/ffffff?text=BioVital" alt="BioVital Logo" class="logo-img">
+                    </a>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="registro.html" class="nav-link">Registrarse</a>
+                    </li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="auth-main">
+        <div class="auth-container">
+            <div class="auth-card">
+                <div class="auth-header">
+                    <h1>Iniciar Sesión</h1>
+                    <p>Accede a tu cuenta de BioVital</p>
+                </div>
+
+                <form class="auth-form" id="loginForm">
+                    <div class="form-group">
+                        <label for="username">Nombre de Usuario o Email:</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Contraseña:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+
+                    <div class="form-options">
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" id="remember" name="remember">
+                                Recordarme
+                            </label>
+                        </div>
+                        <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary" onclick="window.location.href='index.html'">Cancelar</button>
+                        <button type="submit" class="btn-primary">Iniciar Sesión</button>
+                    </div>
+                </form>
+
+                <div class="auth-footer">
+                    <p>¿No tienes una cuenta? <a href="registro.html">Regístrate aquí</a></p>
+                </div>
+
+                <div class="auth-divider">
+                    <span>O</span>
+                </div>
+
+                <div class="social-login">
+                    <button class="social-btn google-btn">
+                        <i class="fab fa-google"></i>
+                        Iniciar con Google
+                    </button>
+                    <button class="social-btn facebook-btn">
+                        <i class="fab fa-facebook"></i>
+                        Iniciar con Facebook
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="https://via.placeholder.com/150x50/1e40af/ffffff?text=BioVital" alt="BioVital Logo" class="footer-logo-img">
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Especialidades</h4>
+                        <ul>
+                            <li><a href="#especializaciones">Medicina General</a></li>
+                            <li><a href="#especializaciones">Cardiología</a></li>
+                            <li><a href="#especializaciones">Neumonología</a></li>
+                            <li><a href="#especializaciones">Psicología</a></li>
+                            <li><a href="#especializaciones">Pediatría</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Consultorios</h4>
+                        <ul>
+                            <li><a href="#ubicacion">Caracas (Principal)</a></li>
+                            <li><a href="#ubicacion">Caracas (Este)</a></li>
+                            <li><a href="#ubicacion">Maracaibo (Zulia)</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Contacto</h4>
+                        <ul>
+                            <li><i class="fas fa-phone"></i> <a href="tel:+582121234567">+58 212-1234567</a></li>
+                            <li><i class="fas fa-envelope"></i> <a href="mailto:info@biovital.com">info@biovital.com</a></li>
+                            <li><i class="fas fa-clock"></i> Lunes - Viernes: 8:00 AM - 6:00 PM</li>
+                            <li><i class="fas fa-calendar"></i> Sábados: 9:00 AM - 1:00 PM</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-social">
+                    <h4>Síguenos</h4>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 BioVital. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

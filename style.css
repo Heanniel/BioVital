@@ -325,6 +325,97 @@ body {
     color: #1877f2;
 }
 
+/* Minimalist Auth Styles */
+.auth-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 3rem;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2), 0 20px 60px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.5);
+    transition: var(--transition);
+}
+
+.auth-form input, .auth-form select {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: var(--transition);
+    background-color: #fafafa;
+    outline: none;
+    margin-top: 0.5rem;
+}
+
+.auth-form input:focus, .auth-form select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    background-color: #fff;
+}
+
+.role-switcher {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.role-link {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    text-decoration: none;
+    padding: 0.5rem 0.8rem;
+    border-radius: 6px;
+    transition: var(--transition);
+    background: #f3f4f6;
+}
+
+.role-link:hover {
+    background: #e5e7eb;
+    color: var(--text-dark);
+}
+
+.role-link.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Themes for different roles */
+.theme-paciente .auth-main { background: linear-gradient(135deg, #f0f7ff, #e0f2fe); }
+.theme-paciente .auth-card { border-top: 5px solid #3b82f6; }
+
+.theme-medico .auth-main { background: linear-gradient(135deg, #f0fdfa, #ccfbf1); }
+.theme-medico .auth-card { border-top: 5px solid #0d9488; }
+.theme-medico .btn-primary { background: #0d9488; }
+.theme-medico .btn-primary:hover { background: #0f766e; }
+.theme-medico .auth-header h1 { color: #0d9488; }
+.theme-medico .forgot-password, .theme-medico .auth-footer a { color: #0d9488; }
+.theme-medico .auth-form input:focus { border-color: #0d9488; box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.1); }
+.theme-medico .role-link.active { background: #0d9488; }
+
+.theme-asistente .auth-main { background: linear-gradient(135deg, #faf5ff, #f3e8ff); }
+.theme-asistente .auth-card { border-top: 5px solid #9333ea; }
+.theme-asistente .btn-primary { background: #9333ea; }
+.theme-asistente .btn-primary:hover { background: #7e22ce; }
+.theme-asistente .auth-header h1 { color: #9333ea; }
+.theme-asistente .forgot-password, .theme-asistente .auth-footer a { color: #9333ea; }
+.theme-asistente .auth-form input:focus { border-color: #9333ea; box-shadow: 0 0 0 3px rgba(147, 51, 234, 0.1); }
+.theme-asistente .role-link.active { background: #9333ea; }
+
+.theme-secretaria .auth-main { background: linear-gradient(135deg, #fff1f2, #ffe4e6); }
+.theme-secretaria .auth-card { border-top: 5px solid #e11d48; }
+.theme-secretaria .btn-primary { background: #e11d48; }
+.theme-secretaria .btn-primary:hover { background: #be123c; }
+.theme-secretaria .auth-header h1 { color: #e11d48; }
+.theme-secretaria .forgot-password, .theme-secretaria .auth-footer a { color: #e11d48; }
+.theme-secretaria .auth-form input:focus { border-color: #e11d48; box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.1); }
+.theme-secretaria .role-link.active { background: #e11d48; }
+
 /* Appointment Page Styles */
 .appointment-main {
     min-height: 100vh;

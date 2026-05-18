@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Asistente - BioVital</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .dashboard-main { padding: 4rem 2rem; min-height: calc(100vh - 80px); background: #faf5ff; }
+        .dashboard-header { margin-bottom: 2rem; }
+        .dashboard-header h1 { color: #7e22ce; }
+        .dashboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+        .dash-card { background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); text-align: center; border-top: 4px solid #9333ea; transition: var(--transition); }
+        .dash-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
+        .dash-card i { font-size: 2.5rem; color: #9333ea; margin-bottom: 1rem; }
+        .dash-card h3 { color: #1f2937; margin-bottom: 0.5rem; }
+        .dash-card p { color: #6b7280; font-size: 0.9rem; }
+    </style>
+</head>
+<body class="theme-asistente">
+    <header class="header" id="header" style="position: static;">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="https://via.placeholder.com/150x50/1e40af/ffffff?text=BioVital" alt="BioVital Logo" class="logo-img">
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Cerrar Sesión</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="dashboard-main">
+        <div class="dashboard-container" style="max-width: 1200px; margin: 0 auto;">
+            <div class="dashboard-header">
+                <h1>Panel de Asistencia</h1>
+                <p>Gestión de consultorios y preparación de pacientes.</p>
+            </div>
+            
+            <div class="dashboard-grid">
+                <div class="dash-card">
+                    <i class="fas fa-procedures"></i>
+                    <h3>Triaje</h3>
+                    <p>Registra signos vitales y motivos de consulta previos a la atención médica.</p>
+                </div>
+                <div class="dash-card">
+                    <i class="fas fa-boxes"></i>
+                    <h3>Inventario Médico</h3>
+                    <p>Gestiona los insumos y materiales del consultorio.</p>
+                </div>
+                <div class="dash-card">
+                    <i class="fas fa-file-signature"></i>
+                    <h3>Consentimientos</h3>
+                    <p>Administra los documentos y firmas de los pacientes.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

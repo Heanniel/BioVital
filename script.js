@@ -212,28 +212,125 @@ function setupForms() {
         appointmentForm.addEventListener('submit', handleAppointmentSubmit);
     }
     
+    // Login form
+    const loginForm = document.getElementById('loginForm');
+    if (loginForm) {
+        loginForm.addEventListener('submit', handleLoginSubmit);
+    }
+
+    // Register form
+    const registerForm = document.getElementById('registerForm');
+    if (registerForm) {
+        registerForm.addEventListener('submit', handleRegisterSubmit);
+    }
+    
     // Form validation
     setupFormValidation();
 }
 
+// Handle Login Form Submit
+function handleLoginSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button[type="submit"]');
+    const originalText = btn.innerHTML;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Iniciando...';
+    btn.disabled = true;
 
-// Handle Appointment Form Submit
-function handleAppointmentSubmit(e) {
+    const formData = new FormData(e.target);
+    
+    // We send an AJAX request to the PHP backend
+    fetch('controlador/LoginController.php', {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'X-Requested-With': 'XMLHttpRequest'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            // El controlador de PHP devuelve la ruta como '../vista/...' 
+            // pero estamos ejecutando JS desde la raíz (login.html)
+            let redirectUrl = data.redirect;
+            if(redirectUrl.startsWith('../')) {
+                redirectUrl = redirectUrl.substring(3); // quitamos '../'
+            }
+            window.location.href = redirectUrl;
+        } else {
+            alert(data.error || 'Usuario o contraseña incorrectos.');
+            btn.innerHTML = originalText;
+            btn.disabled = false;
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Ocurrió un error al intentar iniciar sesión.');
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+    });
+}
+
+// Handle Register Form Submit
+function handleRegisterSubmit(e) {
     e.preventDefault();
     
-    const formData = new FormData(appointmentForm);
-    const data = Object.fromEntries(formData);
+    const pass = document.getElementById('pass').value;
+    const confirmPass = document.getElementById('confirmPassword').value;
     
-    // Simulate appointment booking
-    console.log('Appointment data:', data);
+    if(pass !== confirmPass) {
+        alert('Las contraseñas no coinciden');
+        return;
+    }
+
+    const btn = e.target.querySelector('button[type="submit"]');
+    const originalText = btn.innerHTML;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Registrando...';
+    btn.disabled = true;
+
+    const formData = new FormData(e.target);
+    const msgDiv = document.getElementById('registerMessage');
     
-    // Show success message
-    showSuccessMessage('¡Cita agendada con éxito! Te confirmaremos pronto.');
-    
-    // Close modal and reset form
-    closeModal();
-    appointmentForm.reset();
+    fetch('controlador/RegistroPacienteController.php', {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'X-Requested-With': 'XMLHttpRequest'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        msgDiv.style.display = 'block';
+        if (data.success) {
+            msgDiv.style.backgroundColor = '#d1fae5'; // success green
+            msgDiv.style.color = '#065f46';
+            msgDiv.style.border = '1px solid #10b981';
+            msgDiv.textContent = data.message;
+            
+            setTimeout(() => {
+                window.location.href = 'login.html';
+            }, 2000);
+        } else {
+            msgDiv.style.backgroundColor = '#fee2e2'; // error red
+            msgDiv.style.color = '#991b1b';
+            msgDiv.style.border = '1px solid #ef4444';
+            msgDiv.textContent = data.message || 'Error al registrar';
+            btn.innerHTML = originalText;
+            btn.disabled = false;
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        msgDiv.style.display = 'block';
+        msgDiv.style.backgroundColor = '#fee2e2';
+        msgDiv.style.color = '#991b1b';
+        msgDiv.style.border = '1px solid #ef4444';
+        msgDiv.textContent = 'Error de conexión con el servidor.';
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+    });
 }
+
+// Handle Appointment Form Submit
 
 // Form Validation
 function setupFormValidation() {
